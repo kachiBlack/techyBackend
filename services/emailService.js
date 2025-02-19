@@ -29,7 +29,7 @@ const sendEmail = async (name, email, phone, message) => {
     });
 
     const mailOptions = {
-      // to: "Egesi.promise@gmail.com",
+      // to: "ubani.udochukwu@gmail.com",
       to: process.env.EMAIL_RECEIVER,
       from: email,
       name,
@@ -39,7 +39,7 @@ const sendEmail = async (name, email, phone, message) => {
     };
 
     await transporter.sendMail(mailOptions);
-    console.log("Email sent to:", "Egesi.promise@gmail.com");
+    console.log("Email sent to:", process.env.EMAIL_RECEIVER);
   } catch (error) {
     console.error("Error sending email:", error);
   }

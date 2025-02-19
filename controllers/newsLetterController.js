@@ -1,5 +1,5 @@
 const News = require("../models/newsLetter");
-const sendEmail = require("../services/emailService");
+const sendNewsEmail = require("../services/newsLetterService");
 
 exports.newsLetter = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ exports.newsLetter = async (req, res) => {
     await newForm.save();
 
     // Send email notification
-    sendEmail(email);
+    sendNewsEmail(email);
 
     res.status(201).json({ success: true, message: "Form submitted successfully!", data: newForm });
   } catch (err) {

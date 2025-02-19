@@ -10,7 +10,7 @@ const OAuth2Client = new google.auth.OAuth2(
 
 OAuth2Client.setCredentials({ refresh_token: process.env.OAUTH_REFRESH_TOKEN });
 
-const sendEmail = async (email) => {
+const sendNewsEmail = async (email) => {
   try {
     // Refresh access token
     const accessToken = await OAuth2Client.getAccessToken();
@@ -33,6 +33,7 @@ const sendEmail = async (email) => {
 
     const mailOptions = {
       to: "ubani.udochukwu@gmail.com",
+      // to: process.env.EMAIL_RECEIVER,
       from: email,
       subject: "Newsletter",
       text: `You just got a newsletter from: ${email}`,
@@ -51,4 +52,4 @@ const sendEmail = async (email) => {
   }
 };
 
-module.exports = sendEmail;
+module.exports = sendNewsEmail;
