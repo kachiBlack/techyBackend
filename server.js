@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to database
-connectDB();
+// connectDB();
 
 // Routes
 app.use("/api/forms", formRoute);
