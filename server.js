@@ -16,6 +16,9 @@ app.use(express.json());
 // connectDB();
 
 // Routes
+app.get( "/", (req, res) => {
+    res.send("Welcome to GardeTech API.")
+})
 app.use("/api/forms", formRoute);
 app.use("/api/forms", newsLetterRoute);
 
