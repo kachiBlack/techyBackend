@@ -6,7 +6,7 @@ exports.submitForm = async (req, res) => {
     const { name, email, phone, message } = req.body;
     
     const newForm = new Form({ name, email, phone, message });
-    await newForm.save();
+    // await newForm.save();
 
     // Send email notification
     sendEmail(email, name, phone, message);

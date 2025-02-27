@@ -6,7 +6,7 @@ exports.newsLetter = async (req, res) => {
     const { email} = req.body;
     
     const newForm = new News({ email });
-    await newForm.save();
+    // await newForm.save();
 
     // Send email notification
     sendNewsEmail(email);
