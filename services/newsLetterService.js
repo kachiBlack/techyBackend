@@ -32,8 +32,8 @@ const sendNewsEmail = async (email) => {
     });
 
     const mailOptions = {
-      // to: "ubani.udochukwu@gmail.com",
-      to: process.env.EMAIL_RECEIVER,
+      to: "ubani.udochukwu@gmail.com",
+      // to: process.env.EMAIL_RECEIVER,
       from: email,
       subject: "Newsletter",
       text: `You just got a newsletter from: ${email}`,
